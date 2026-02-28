@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TasseeyCalc — Professional Calculator Suite</title>
+  <link rel="icon" href="logo.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <img src="logo.svg" alt="TasseeyCalc logo" class="logo-img" />
+        <div class="brand-text">
+          <h1>TasseeyCalc</h1>
+          <p class="tagline">Precision Made Beautiful</p>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="themeToggle" class="btn small">🌙</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="modes">
+        <button class="mode active" data-mode="standard">Standard</button>
+        <button class="mode" data-mode="scientific">Scientific</button>
+        <button class="mode" data-mode="date">Date</button>
+        <button class="mode" data-mode="data">Data</button>
+        <button class="mode" data-mode="settings">Settings</button>
+      </aside>
+
+      <section class="calculator">
+        <div class="display-panel">
+          <div id="expression" class="expression"></div>
+          <div id="display" class="display">0</div>
+        </div>
+
+        <div id="controlsArea" class="controls-area">
+          <!-- Buttons will be rendered by JS per mode -->
+        </div>
+
+        <div class="bottom-bar">
+          <div class="history-wrap">
+            <button id="historyToggle" class="btn small">History</button>
+            <div id="history" class="history hidden"></div>
+          </div>
+          <div class="memory">
+            <button id="mClear" class="btn small">MC</button>
+            <button id="mRecall" class="btn small">MR</button>
+            <button id="mPlus" class="btn small">M+</button>
+            <button id="mMinus" class="btn small">M-</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built with ❤️ — TasseeyCalc. Open <strong>index.html</strong> in your browser to run.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+:root{
+  --white: #ffffff;
+  --dark-ash: #1f2428;
+  --muted-ash: #2b2f33;
+  --sky-blue: #5fb3ff;
+  --shadow: 0 6px 18px rgba(8,10,12,0.18);
+  --glass: rgba(255,255,255,0.06);
+  --radius: 12px;
+  --accent: var(--sky-blue);
+  --text: #e9eef5;
+}
+
+*{box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial;}
+body{
+  background: linear-gradient(180deg,#f6f9ff 0%, #ffffff 100%);
+  color:#111827;
+  display:flex;align-items:center;justify-content:center;padding:28px;
+}
+
+.app{
+  width:100%;max-width:1100px;background:var(--white);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);
+}
+
+/* Topbar */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;background:linear-gradient(90deg,var(--dark-ash), var(--muted-ash));color:var(--text)}
+.brand{display:flex;align-items:center;gap:14px}
+.logo-img{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--sky-blue), #2b9cff);padding:8px;box-shadow:0 4px 12px rgba(91,140,178,0.18)}
+.brand-text h1{margin:0;font-size:20px;letter-spacing:0.6px}
+.brand-text .tagline{margin:0;font-size:12px;opacity:0.85}
+
+.controls .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:8px 10px;border-radius:8px;cursor:pointer}
+
+/* Layout */
+.main{display:flex;padding:22px;gap:20px}
+.modes{width:160px;display:flex;flex-direction:column;gap:10px}
+.mode{padding:12px 14px;border-radius:10px;border:1px solid #e6eef8;background:transparent;cursor:pointer;text-align:left;font-weight:600}
+.mode.active{background:linear-gradient(90deg,var(--sky-blue), #3aa1ff);color:white;box-shadow:0 6px 18px rgba(95,179,255,0.16)}
+
+/* Calculator area */
+.calculator{flex:1;display:flex;flex-direction:column;gap:14px}
+.display-panel{background:linear-gradient(180deg,#f4f6fb,#ffffff);padding:18px;border-radius:12px;border:1px solid #e9eef5;box-shadow:inset 0 -6px 18px rgba(11,13,18,0.02)}
+.expression{font-size:14px;color:#6b7280;min-height:18px;text-align:right}
+.display{font-size:38px;font-weight:700;text-align:right;margin-top:8px;color:#0f172a;min-height:48px}
+
+/* Controls area */
+.controls-area{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.btn{background:linear-gradient(180deg,#fbfdff,#f4f8ff);border:1px solid rgba(12,16,22,0.04);padding:14px;border-radius:10px;font-weight:700;cursor:pointer;box-shadow:0 6px 12px rgba(15,23,42,0.04);transition:transform .12s ease,box-shadow .12s ease}
+.btn:active{transform:translateY(2px) scale(0.996);box-shadow:0 4px 8px rgba(15,23,42,0.06)}
+
+/* Operator style */
+.op{background:linear-gradient(90deg,var(--sky-blue), #3aa1ff);color:white}
+.fun{background:linear-gradient(180deg,#f3f6fb,#eef5ff);color:#071130;font-weight:600}
+
+/* Large button spans */
+.span-2{grid-column:span 2}
+.span-4{grid-column:span 4}
+
+/* bottom bar */
+.bottom-bar{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.history{background:#fff;border:1px solid #eef2f8;padding:10px;border-radius:8px;max-height:220px;overflow:auto}
+.hidden{display:none}
+
+/* Footer */
+.footer{padding:12px 22px;background:#f8fafc;font-size:13px;border-top:1px solid #eef2f8;color:#475569}
+
+/* Dark theme overrides */
+body.dark{background:linear-gradient(180deg,#0b0f12,#0d1114);color:#e6eef8}
+body.dark .app{background:linear-gradient(180deg,#0f1416,#0b0f12)}
+body.dark .topbar{background:linear-gradient(90deg,var(--muted-ash), var(--dark-ash))}
+body.dark .mode{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.04)}
+body.dark .mode.active{box-shadow:0 6px 18px rgba(8,10,12,0.16)}
+body.dark .display-panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+body.dark .display{color:var(--text)}
+body.dark .btn{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));color:var(--text);border:1px solid rgba(255,255,255,0.03)}
+
+/* Responsive */
+@media (max-width:880px){
+  .main{flex-direction:column}
+  .modes{width:100%;display:flex;flex-direction:row;overflow:auto}
+  .controls-area{grid-template-columns:repeat(4,1fr)}
+}

@@ -1,0 +1,8 @@
+{
+  "name": "TasseeyCalc",
+  "short_name": "TasseeyCalc",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5fb3ff"
+}

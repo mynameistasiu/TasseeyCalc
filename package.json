@@ -1,0 +1,10 @@
+﻿{
+  "name": "tasseeycalc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static web app runner for TasseeyCalc",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}
